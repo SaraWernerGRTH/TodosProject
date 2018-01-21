@@ -6,33 +6,15 @@ import { Todo } from './Todo'
 import { Done } from './Done';
 import style from './TodoList.scss'
 export class TodoList extends Component {
-    // componentWillUnmount() {
-    //     this.setState({todos: this.props.FilterList.filter(item=>item.isChecked!=true)}); 
-    //     this.setState({dones: this.props.FilterList.filter(item=>item.isChecked==true)}); 
-    //  }
     constructor(props) {
         debugger;
         super(props);
         this.state = {
             ValueSearch: "",
-            // todos:[],
-            // dones:[]
         }
-        debugger; 
         this.props.OnRefresh();
-        console.log(this.props);
-        // this.abc();
-        // this.abx().subscribe(()=>{
-        //     this.props.OnRefresh();
-        //     console.log(this.props)
-        // });
-        
+        console.log(this.props);        
     }
-    // abc =()=> {
-    //     this.setState({todos: this.props.FilterList.filter(item=>item.isChecked!=true)}); 
-    //     this.setState({dones: this.props.FilterList.filter(item=>item.isChecked==true)}); 
-    // }
-
     onInputChange = (event) => {
         const value = event.target.value;
         this.state.ValueSearch = value;
