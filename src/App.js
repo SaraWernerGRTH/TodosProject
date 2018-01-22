@@ -26,7 +26,7 @@ class App extends Component {
                         <Route exact path="/"
                             render={(props) => <Home {...props} data={this.props.data}></Home>} />
                         <Route path="/TodoList"
-                            render={(props) => <TodoList onDelete={this.props.delete}  onChange={this.props.change} onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></TodoList>} />
+                            render={(props) => <TodoList onDelete={this.props.delete}  onUpdate={this.props.update} onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></TodoList>} />
                         <Route path="/Add/:id"
                             render={(props) => <Add {...props} onAdd={this.props.add} onUpdate={this.props.update} data={this.props.data} ></Add>} />
                     </div>

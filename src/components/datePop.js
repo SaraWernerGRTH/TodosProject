@@ -2,16 +2,17 @@ import React,{ Component } from 'react';
 import { Calendar } from 'react-date-range';
  
 export class DatePop extends Component {
-    handleSelect(date){
-        console.log(date); // Momentjs object 
-    }
+    // handleSelect(date){
+    //     alert(date); // Momentjs object 
+    // }
 
     render(){
         return (
             <div>
                 <Calendar
-                    onInit={this.handleSelect}
-                    onChange={this.handleSelect}
+                    onInit={this.props.action}
+                    onChange={this.props.action}
+                    format="DD/MM/YYY"
                 />
             </div>
         )

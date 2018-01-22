@@ -25,6 +25,7 @@ export class Add extends React.Component {
         console.log(this.props);
 
         if (this.props.match.params.id != "null") {
+            debugger;
             this.state.currentTodo = this.props.data.filter(ct => ct.id == this.props.match.params.id);
             this.state.todo.id = this.state.currentTodo[0].id;
             this.state.todo.name = this.state.currentTodo[0].name;
@@ -50,7 +51,7 @@ export class Add extends React.Component {
     onSave = (event) => {
         if (this.state.currentTodo == null) {
             this.props.onAdd(this.state.todo);
-            this.state.todo.id = this.props.data.length + 1;
+            this.state.todo.id =Math.max.apply(Math,this.props.data.map(function(o){return o.id}))+1;
         }
         else
             this.props.onUpdate(this.state.todo);

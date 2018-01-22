@@ -122,7 +122,7 @@ table {
 
     td {
         &:first-child {
-            position: absolute;
+            // position: absolute;
             top: 50%;
             transform: translateY(-50%);
             width: $imageBig;
@@ -225,3 +225,4 @@ table {
         margin: 0.5rem 0;
         padding: 0;
     }
+}

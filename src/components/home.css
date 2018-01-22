@@ -321,7 +321,7 @@ table tr:nth-child(2n+1) {
 .search {
     top:11%;
     right:50%;
-    position:absolute;
+    /* position:absolute; */
 }
 .searchtext {
     font-family:David;
@@ -332,7 +332,7 @@ table tr:nth-child(2n+1) {
 }
 input[type=text] {
     right: 35%;
-    position: absolute;
+    /* position: absolute; */
     /*width: 130px;*/
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -423,14 +423,14 @@ form {
 .time {
     top: 25%;
     right: 5%;
-    position: absolute;
+    /* position: absolute; */
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     width:5%;
 }
-.table2{
+/* .table2{
     position: absolute;
     border: none;
     -webkit-box-shadow: none;
@@ -453,9 +453,9 @@ form {
     box-shadow: none;
     overflow: visible;
     margin-top: 17%;
-}
+} */
 .dones-list{
-position: absolute;
+/* position: absolute; */
 top: 45%;
 left: 20%;
 }
@@ -482,4 +482,7 @@ left: 20%;
     font-size: x-large;
     margin-top: 75px;
     border-radius: 15px;
+}
+.empty-td{
+    display: none !important;
 }

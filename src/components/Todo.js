@@ -13,53 +13,55 @@ export class Todo extends React.Component {
             showDetails: false,
             startDate:"",
             endDate:"",
-            remark:""
+            currentRemark:"",
         }
-        this.handleApply1 = this.handleApply1.bind(this);   
-        this.handleApply2 = this.handleApply2.bind(this); 
-        this.setRemark = this.setRemark.bind(this);       
+        this.setRemark = this.setRemark.bind(this);    
+        this.startDateHandler = this.startDateHandler.bind(this);  
+        this.endDateHandler = this.endDateHandler.bind(this);               
     }
     update(id){
         this.setState({showDetails:true});
     }
     save(id){
         this.setState({showDetails:false});
-        //startDate,endDate,remark,true
-        this.props.onChange(id);        
+        var todo={
+            "id": id,
+            "IsDone":true,
+            "startDate":this.state.startDate,
+            "endDate":this.state.endDate,
+            "Remark":this.state.currentRemark
+        }; 
+        this.props.updateToDone(todo);
+        this.currentRemark="";     
     }
-    setRemark(){
-    //     var remark=document.getElementById(remark).textContent;
-    //   this.setState({remark:remark});
+    setRemark(event){
+        this.setState({currentRemark: event.target.value});
     }
-    handleApply1(event, picker) {
-        this.setState({
-          startDate: picker.startDate,
-        });
-      }
-      handleApply2(event, picker) {
-        this.setState({
-          endDate: picker.startDate,
-        });
-      }
+    startDateHandler(event) {
+        console.log(String(event._d).slice(4,15)); 
+        this.setState({startDate:String(event._d).slice(4,15)});        
+    }
+    endDateHandler(event) { 
+        console.log(String(event._d).slice(4,15)); 
+        this.setState({endDate:String(event._d).slice(4,15)});        
+    }
     render() {
         return (
             <tr>                
-                {(this.state.showDetails == true) ? ( <td className="details-to-fill">
+                {(this.state.showDetails === true) ? ( <td className="details-to-fill">
                 <div className="wrapper-details">
-                   <DatePop id="startDate" className="date-picker"  onApply={() => this.handleApply1()}></DatePop>
-                   <DatePop id="endDate" className="date-picker"  onApply={() => this.handleApply2()}></DatePop>
-                   <input id="remark" type="text" placeholder="Remark Here..." onChange={() => this.setRemark()}/>
+                   <DatePop id="startDate" className="date-picker"  action={this.startDateHandler}></DatePop>
+                   <DatePop id="endDate" className="date-picker"  action={this.endDateHandler}></DatePop>
+                   { <input id="remark" type="text" value={this.state.currentRemark} placeholder="Remark Here..." onChange={this.setRemark}/> }
                    <button className="save-btn" onClick={() => this.save(this.props.id)}>Save</button>
                </div>
-                </td>) : (<td></td>)}
+                </td>) : (<td className="empty-td"></td>)}
                 <td> {this.props.id}</td>
                 <td> {this.props.name}</td>
                 <td> <input type="checkbox" onClick={() => this.update(this.props.id)}/> </td>
                 <td ><Link to={`/Add/${this.props.id}`}>Update</Link></td>
                 <td><button  onClick={() => this.props.onDelete(this.props.id)}>delete</button></td>
             </tr>
-        );
-       
+        );       
     }
-}
- 
+} 
