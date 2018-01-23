@@ -7,7 +7,7 @@ import { OnAddTodo, OnUpdateTodo, deleteTodo, OnSearchTodo, OnRefreshTodo, chang
 import { BrowserRouter, Route } from 'react-router-dom'
 import { Home } from './components/home/home';
 import { Add } from './components/Add';
-import { TodoList } from './components/TodoList';
+import { TodoList } from './components/todoList/TodoList';
 import { Layout } from './components/Layout'
 
 class App extends Component {

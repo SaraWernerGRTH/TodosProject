@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
-import { Todo } from './Todo'
-import { Done } from './Done';
+import { Todo } from '../Todo'
+import { Done } from '../Done';
 
 export class TodoList extends Component {
     constructor(props) {

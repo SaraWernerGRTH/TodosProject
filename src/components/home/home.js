@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
-import { TodoList } from '../TodoList'
+import { TodoList } from '../todoList/TodoList'
 import style from './home.scss'
 
 export class Home extends Component {
