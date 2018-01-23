@@ -3,7 +3,7 @@ $borderRadius: 10px;
 $imageBig: 100px;
 $imageSmall: 60px;
 $padding: 10px;
-@import "./ctr.vars.scss";
+@import "../ctr.vars.scss";
 body .btn-info {
   color: #f0ad4e;
   background-image: -webkit-linear-gradient(top, #2b2a2a 0, #2b2a2a 100%); }

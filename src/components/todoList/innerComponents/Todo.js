@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { deleteTodo } from './../actions/todoAction';
-import { changeTodo } from './../actions/todoAction';
+import { deleteTodo } from '../../../actions/todoAction';
+import { changeTodo } from '../../../actions/todoAction';
 import { Calendar } from 'react-date-range';
 import { DatePop } from './datePop';
 

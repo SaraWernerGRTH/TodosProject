@@ -6,9 +6,9 @@ import { onLoad } from './actions/todoAction'
 import { OnAddTodo, OnUpdateTodo, deleteTodo, OnSearchTodo, OnRefreshTodo, changeTodo } from './actions/todoAction'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { Home } from './components/home/home';
-import { Add } from './components/Add';
+import { Add } from './components/add/Add';
 import { TodoList } from './components/todoList/TodoList';
-import { Layout } from './components/Layout'
+import { Layout } from './components/layout/Layout'
 
 class App extends Component {
     componentWillMount() {
@@ -18,8 +18,7 @@ class App extends Component {
     render() {
        // console.log(this)
         return (
-            <div>
-                 
+            <div>                 
                 <BrowserRouter>
                     <div>
                         <Layout />
