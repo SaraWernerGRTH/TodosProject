@@ -1,18 +1,22 @@
-body .btn-info {
-  color: #f0ad4e;
+body .btn-warning {
+  color: #f0ad4e !important;
   background-image: -webkit-linear-gradient(top, #2b2a2a 0, #2b2a2a 100%); }
+
+body .btn-warning a {
+  color: #f0ad4e !important; }
 
 body .btn-danger {
   color: #d9534f;
   background-image: -webkit-linear-gradient(top, #2b2a2a 0, #2b2a2a 100%); }
 
 body .btn-danger:hover {
-  color: #fff;
   background-image: -webkit-linear-gradient(top, #d9534f 0, #d9534f 100%); }
 
-body .btn-info:hover {
-  color: #fff;
-  background-image: -webkit-linear-gradient(top, #337ab7 0, #337ab7 100%); }
+body .btn-warning:hover {
+  background-image: -webkit-linear-gradient(top, #f0ad4e 0, #f0ad4e 100%); }
+
+body .btn-warning a:hover {
+  color: #fff !important; }
 
 .row {
   padding-top: 10px;

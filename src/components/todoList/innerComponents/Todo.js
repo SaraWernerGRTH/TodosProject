@@ -43,11 +43,9 @@ export class Todo extends React.Component {
         this.setState({currentRemark: event.target.value});
     }
     startDateHandler(event) {
-        console.log(String(event._d).slice(4,15)); 
         this.setState({startDate:String(event._d).slice(4,15)});        
     }
     endDateHandler(event) { 
-        console.log(String(event._d).slice(4,15)); 
         this.setState({endDate:String(event._d).slice(4,15)});        
     }
     render() {
@@ -64,7 +62,7 @@ export class Todo extends React.Component {
                 </span></div>) : (<span className="empty-td"></span>)}
                 <span className="col col-md-3"> {this.props.name}</span>
                 <span className="col col-md-2"> <input type="checkbox" onClick={() => this.update(this.props.id)}/> </span>
-                <span className="col col-md-2"><button className="btn btn-outline-warning"><Link to={`/Add/${this.props.id}`}>Update</Link></button></span>
+                <span className="col col-md-2"><button className="btn btn-warning"><Link to={`/Add/${this.props.id}`}>Update</Link></button></span>
                 <span className="col col-md-2"><button className="btn btn-danger" onClick={() => this.props.onDelete(this.props.id)}>Delete</button></span>
             </div>
         );       
