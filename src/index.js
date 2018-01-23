@@ -10,8 +10,6 @@ import thunkMiddleware from 'redux-thunk'
 import TodoReducer from './reducers/TodoReducer';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './components/home.css'
-import './components/TodoList.scss'
 
 const store = createStore(TodoReducer, applyMiddleware(thunkMiddleware, logger));
 

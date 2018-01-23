@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { onLoad } from './actions/todoAction'
 import { OnAddTodo, OnUpdateTodo, deleteTodo, OnSearchTodo, OnRefreshTodo, changeTodo } from './actions/todoAction'
 import { BrowserRouter, Route } from 'react-router-dom'
-import { Home } from './components/home';
+import { Home } from './components/home/home';
 import { Add } from './components/Add';
 import { TodoList } from './components/TodoList';
 import { Layout } from './components/Layout'

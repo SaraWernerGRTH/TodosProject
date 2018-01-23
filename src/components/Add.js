@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import { BrowserRouter, Link } from 'react-router-dom'
-import { Route, browserHistory, Redirect } from 'react-router'
-
+import { BrowserRouter, Link } from 'react-router-dom';
+import { Route, browserHistory, Redirect } from 'react-router';
+import { setTimeout } from 'timers';
 
 export class Add extends React.Component {
     constructor(props) {
@@ -17,12 +17,9 @@ export class Add extends React.Component {
                 "Remark":""
             },
             redirect: false,
-            currentTodo: null                    
+            currentTodo: null ,
+            validationError:false                   
         }
-
-        console.log(this.props.location)
-        debugger;
-        console.log(this.props);
 
         if (this.props.match.params.id != "null") {
             debugger;
@@ -46,15 +43,25 @@ export class Add extends React.Component {
 
     returnToList = (e) => {
         e.preventDefault();
-        this.setState({ redirect: true })
+        this.setState({ redirect: true });
     }
     onSave = (event) => {
-        if (this.state.currentTodo == null) {
-            this.props.onAdd(this.state.todo);
-            this.state.todo.id =Math.max.apply(Math,this.props.data.map(function(o){return o.id}))+1;
+        debugger;
+        if(this.state.todo.name){
+            if (this.state.currentTodo == null) {
+                this.props.onAdd(this.state.todo);
+                this.state.todo.id =Math.max.apply(Math,this.props.data.map(function(o){return o.id}))+1;
+            }
+            else
+                this.props.onUpdate(this.state.todo);
+            this.returnToList(event);
         }
-        else
-            this.props.onUpdate(this.state.todo);
+        else{
+            this.setState({ validationError: true });
+            this.returnToList(event);
+        }
+    }
+    onCancel = (event) => {
         this.returnToList(event);
     }
     render() {       
@@ -62,24 +69,18 @@ export class Add extends React.Component {
         return (
             <div>
                 <form className="add">
-                    <p className="titleAdd">Add Todo</p>
+                    <p className="titleAdd">Todo Details</p>
                     <input  
                         id="name"
                         onChange={this.onInputChange}
                         placeholder="name"
                         value={this.state.todo.name}
                         className="ss"/>
-                    <br />
-                    {/* <input  
-                        id="isDone"
-                        onChange={this.onInputChange}
-                        placeholder="isDone"
-                        value={this.state.todo.isDone}
-                        className="ss"/>
-                    <br />     */}
+                    <br /> 
+                    {(this.state.validationError === true) ? (<p className="error-message">You Must Add A Todo's Name !!!</p>) : (<p></p>)}
+                    <button class="panel-footer" className="cancel" onClick={this.onCancel} >Cancel</button>
                     <button class="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
                 </form>
-               
             </div>
         );
     }

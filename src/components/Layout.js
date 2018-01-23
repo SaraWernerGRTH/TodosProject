@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 export class Layout extends React.Component {
     constructor(props, context) {
         super(props, context)
@@ -15,7 +14,7 @@ export class Layout extends React.Component {
         this.setState({ collapsed });
     }
     button = {
-        margin: '0.5%',
+        mayrgin: '0.5%',
         float: 'right'
     };
 
@@ -37,13 +36,13 @@ export class Layout extends React.Component {
                     <div className={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
                             <li>
-                                <Link to="/" onClick={this.toggleCollapse}>Home</Link>
+                                <Link to="/" onClick={this.toggleCollapse} className="navigation-link">Home</Link>
                             </li>
                             <li>
-                                <Link to="/TodoList" onClick={this.toggleCollapse}>TodoList</Link>
+                                <Link to="/TodoList" onClick={this.toggleCollapse} className="navigation-link">TodoList</Link>
                             </li>
                             <li>
-                                <Link to={`/Add/${null}`} onClick={this.toggleCollapse}>Add</Link>
+                                <Link to={`/Add/${null}`} onClick={this.toggleCollapse} className="navigation-link">Add</Link>
                             </li>
                         </ul>
                     </div>

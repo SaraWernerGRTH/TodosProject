@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Link } from 'react-router-dom'
 import { Route } from 'react-router'
-import { TodoList } from './TodoList'
-import style from './home.css'
+import { TodoList } from '../TodoList'
+import style from './home.scss'
+
 export class Home extends Component {
     constructor(props, context) {
         super(props, context)
@@ -23,7 +24,6 @@ export class Home extends Component {
                     <div className="center-wrap">
                         <div className="button">                         
                             <Link to="/TodoList">to the list <span className="shift"></span></Link>
-                            <div className="mask"></div>
                         </div>
                     </div>                 
                 </div>

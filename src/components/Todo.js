@@ -5,6 +5,7 @@ import { deleteTodo } from './../actions/todoAction';
 import { changeTodo } from './../actions/todoAction';
 import { Calendar } from 'react-date-range';
 import { DatePop } from './datePop';
+
 export class Todo extends React.Component {
     showDetails="1";
     constructor(props) {
@@ -34,6 +35,10 @@ export class Todo extends React.Component {
         this.props.updateToDone(todo);
         this.currentRemark="";     
     }
+    cancel(){
+        this.setState({showDetails:false});
+        this.currentRemark="";            
+    }
     setRemark(event){
         this.setState({currentRemark: event.target.value});
     }
@@ -47,21 +52,21 @@ export class Todo extends React.Component {
     }
     render() {
         return (
-            <tr>                
-                {(this.state.showDetails === true) ? ( <td className="details-to-fill">
+            <div className="row">                
+                {(this.state.showDetails === true) ? ( <div className="popup-wrapper"><span className="details-to-fill">
                 <div className="wrapper-details">
                    <DatePop id="startDate" className="date-picker"  action={this.startDateHandler}></DatePop>
                    <DatePop id="endDate" className="date-picker"  action={this.endDateHandler}></DatePop>
-                   { <input id="remark" type="text" value={this.state.currentRemark} placeholder="Remark Here..." onChange={this.setRemark}/> }
+                   { <input id="remark" className="remark" type="text" value={this.state.currentRemark} placeholder="Remark Here..." onChange={this.setRemark}/> }
                    <button className="save-btn" onClick={() => this.save(this.props.id)}>Save</button>
+                   <button className="cancel-btn" onClick={() => this.cancel()}>Cancel</button>
                </div>
-                </td>) : (<td className="empty-td"></td>)}
-                <td> {this.props.id}</td>
-                <td> {this.props.name}</td>
-                <td> <input type="checkbox" onClick={() => this.update(this.props.id)}/> </td>
-                <td ><Link to={`/Add/${this.props.id}`}>Update</Link></td>
-                <td><button  onClick={() => this.props.onDelete(this.props.id)}>delete</button></td>
-            </tr>
+                </span></div>) : (<span className="empty-td"></span>)}
+                <span className="col col-md-3"> {this.props.name}</span>
+                <span className="col col-md-2"> <input type="checkbox" onClick={() => this.update(this.props.id)}/> </span>
+                <span className="col col-md-2"><button className="btn btn-outline-warning"><Link to={`/Add/${this.props.id}`}>Update</Link></button></span>
+                <span className="col col-md-2"><button className="btn btn-danger" onClick={() => this.props.onDelete(this.props.id)}>Delete</button></span>
+            </div>
         );       
     }
 } 
