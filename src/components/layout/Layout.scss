@@ -1,0 +1,13 @@
+$baseColor: #398B93;
+$borderRadius: 10px;
+$imageBig: 100px;
+$imageSmall: 60px;
+$padding: 10px;
+@import "../ctr.vars.scss";
+
+.navigation-link {
+    color: #f0ad4e !important;
+    font-size: 2rem; }  
+
+    .navbar-inverse {
+        background-image: -webkit-linear-gradient(top, #af4340 0, #af4340 100%); }
