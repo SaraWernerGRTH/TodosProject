@@ -36,6 +36,7 @@ export class Done extends React.Component {
                   <span className="col col-md-2"> {this.props.Remark}</span>
                   <span  className="col col-md-1"><button className="btn btn-warning" ><Link to={`/Add/${this.props.id}`}>Update</Link></button></span>
                   <span className="col col-md-1"><button className="btn btn-danger" onClick={() => this.props.onDelete(this.props.id)}>Delete</button></span>
+                  <span className="col"><button className="btn btn-details btn-details-done"><Link to={`/Details/${this.props.id}`}>Details</Link></button></span>
              </div>
         );
        

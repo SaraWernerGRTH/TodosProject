@@ -99,6 +99,24 @@ body .btn-warning a:hover {
   -webkit-box-shadow: 0 0 10px #2b2a2a;
   box-shadow: 0 0 10px #2b2a2a; }
 
+.btn-details {
+  position: relative;
+  background-color: transparent;
+  border: 1px solid white; }
+  .btn-details a {
+    color: white; }
+
+.btn-details:hover {
+  background-color: white; }
+  .btn-details:hover a {
+    color: #2b2a2a; }
+
+.btn-details-done {
+  float: right;
+  margin-top: -34px;
+  margin-left: 100px;
+  margin-right: -80px; }
+
 .center-wrap {
   position: absolute;
   top: calc(50% - 100px);
@@ -272,6 +290,12 @@ form {
 
 .navbar-inverse {
   background-image: -webkit-linear-gradient(top, #af4340 0, #af4340 100%); }
+
+.details-container {
+  margin: 10% 0% 0% 40%; }
+
+.details-header {
+  color: #f0ad4e; }
 
 .App {
   text-align: center; }

@@ -56,6 +56,7 @@ export class TodoList extends Component {
                                  <h3 className="col col-md-2">isDone</h3>                  
                                  <h3 className="col col-md-2">Update</h3>
                                  <h3 className="col col-md-2">Delete</h3>
+                                 <h3 className="col col-md-2">Details</h3>
                             </div>
                             {this.props.FilterList.filter(item=>item.IsDone!=true).map(todoItem => <Todo key={todoItem.id} onDelete={this.props.onDelete} updateToDone={this.updateToDone} {...todoItem} id={todoItem.id}></Todo>)}
                           </div>
@@ -74,6 +75,7 @@ export class TodoList extends Component {
                                  <h3 className="col col-md-2">Remark</h3>
                                  <h3 className="col col-md-1">Update</h3>
                                  <h3 className="col col-md-1">Delete</h3>
+                                 <h3 className="btn-details-done">Details</h3>
                             </div>
                             {this.props.FilterList.filter(item=>item.IsDone===true).map(doneItem => <Done key={doneItem.id} onDelete={this.props.onDelete} updateToTodo={this.updateToTodo} {...doneItem} id={doneItem.id}></Done>)}
                         </div>  

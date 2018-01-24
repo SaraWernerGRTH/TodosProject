@@ -22,7 +22,7 @@
       "IsDone":false,
       "startDate":"",
       "endDate":"",
-      "Remark":"30 minutes minimum"
+      "Remark":""
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "IsDone":false,
       "startDate":"",
       "endDate":"",
-      "Remark":"tables code"
+      "Remark":""
     },
     {
       "id": "5",
@@ -70,7 +70,7 @@
       "IsDone":false,
       "startDate":"",
       "endDate":"",
-      "Remark":"30 minutes minimum"
+      "Remark":""
     },
     {
       "id": "10",
@@ -78,12 +78,12 @@
       "IsDone":false,
       "startDate":"",
       "endDate":"",
-      "Remark":"tables code"
+      "Remark":""
     },
     {
       "id": "11",
       "name": "update project plan",
-      "IsDone":false,
+      "IsDone":"false",
       "startDate":"",
       "endDate":"",
       "Remark":""

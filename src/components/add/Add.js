@@ -21,7 +21,6 @@ export class Add extends React.Component {
             validationError:false                   
         }
         if (this.props.match.params.id != "null") {
-            debugger;
             this.state.currentTodo = this.props.data.filter(ct => ct.id == this.props.match.params.id);
             this.state.todo.id = this.state.currentTodo[0].id;
             this.state.todo.name = this.state.currentTodo[0].name;

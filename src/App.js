@@ -9,6 +9,7 @@ import { Home } from './components/home/home';
 import { Add } from './components/add/Add';
 import { TodoList } from './components/todoList/TodoList';
 import { Layout } from './components/layout/Layout'
+import { Details } from './components/Details/Details';
 
 class App extends Component {
     componentWillMount() {
@@ -28,6 +29,8 @@ class App extends Component {
                             render={(props) => <TodoList onDelete={this.props.delete}  onUpdate={this.props.update} onSearch={this.props.Search} data={this.props.data} FilterList={this.props.FilterList} OnRefresh={this.props.Refresh}></TodoList>} />
                         <Route path="/Add/:id"
                             render={(props) => <Add {...props} onAdd={this.props.add} onUpdate={this.props.update} data={this.props.data} ></Add>} />
+                        <Route path="/Details/:id"
+                            render={(props) => <Details {...props} data={this.props.data} ></Details>} />
                     </div>
                 </BrowserRouter>
             </div>
