@@ -27,8 +27,12 @@ body * {
 .number {
   font-family: cursive;
   font-size: 70px;
-  color: #d9534f;
+  color: #f0ad4e;
   margin: 5% 0% 0% 32%; }
+
+.checked-input {
+  height: 18px;
+  width: 18px; }
 
 .button {
   background: none center center no-repeat;
@@ -64,12 +68,12 @@ body * {
 
 input[type=text] {
   right: 35%;
-  -webkit-box-sizing: border-box;
+  /* -webkit-box-sizing: border-box; */
   border: 2px solid #fff;
   border-radius: 4px;
   font-size: 30px;
   padding: 8px 20px 8px 40px;
-  width: 100%;
+  width: 90%;
   text-align: center;
   color: #af4340;
   letter-spacing: 2px;

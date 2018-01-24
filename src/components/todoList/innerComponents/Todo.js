@@ -21,7 +21,8 @@ export class Todo extends React.Component {
         this.endDateHandler = this.endDateHandler.bind(this);               
     }
     update(id){
-        this.setState({showDetails:true});
+        this.setState({showDetails:true});   
+        return false;        
     }
     save(id){
         this.setState({showDetails:false});
@@ -37,7 +38,8 @@ export class Todo extends React.Component {
     }
     cancel(){
         this.setState({showDetails:false});
-        this.currentRemark="";            
+        this.currentRemark=""; 
+        return false;
     }
     setRemark(event){
         this.setState({currentRemark: event.target.value});
@@ -61,7 +63,7 @@ export class Todo extends React.Component {
                </div>
                 </span></div>) : (<span className="empty-td"></span>)}
                 <span className="col col-md-3"> {this.props.name}</span>
-                <span className="col col-md-2"> <input type="checkbox" onClick={() => this.update(this.props.id)}/> </span>
+                <span className="col col-md-2"> <button className="btn-check" onClick={() => this.update(this.props.id)}></button> </span>
                 <span className="col col-md-2"><button className="btn btn-warning"><Link to={`/Add/${this.props.id}`}>Update</Link></button></span>
                 <span className="col col-md-2"><button className="btn btn-danger" onClick={() => this.props.onDelete(this.props.id)}>Delete</button></span>
             </div>

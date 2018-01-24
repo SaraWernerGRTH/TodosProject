@@ -53,16 +53,22 @@ body .btn-warning a:hover {
   display: none !important; }
 
 .save-btn {
-  background: #e74c3c;
-  width: 200px;
-  height: 65px;
+  left: 5%;
+  width: 90%;
+  background-color: #af4340;
   color: white;
-  font-size: x-large;
-  display: block;
-  margin: auto;
-  margin-top: 75px;
-  border-radius: 15px;
-  margin-bottom: 75px; }
+  padding: 14px 20px;
+  margin: 35px 0 31px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; }
+
+.btn-check {
+  height: 15px; }
+
+.checked-input {
+  height: 18px;
+  width: 18px; }
 
 .wrapper-details {
   width: 50%;
@@ -77,6 +83,21 @@ body .btn-warning a:hover {
 
 .details-to-fill {
   z-index: 10; }
+
+.cancel-btn {
+  width: 90%;
+  background-color: #af4340;
+  color: white;
+  padding: 14px 20px;
+  margin: 0px 0 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; }
+
+.remark:focus {
+  outline: none !important;
+  -webkit-box-shadow: 0 0 10px #2b2a2a;
+  box-shadow: 0 0 10px #2b2a2a; }
 
 .center-wrap {
   position: absolute;
@@ -107,8 +128,12 @@ body * {
 .number {
   font-family: cursive;
   font-size: 70px;
-  color: #d9534f;
+  color: #f0ad4e;
   margin: 5% 0% 0% 32%; }
+
+.checked-input {
+  height: 18px;
+  width: 18px; }
 
 .button {
   background: none center center no-repeat;
@@ -144,12 +169,12 @@ body * {
 
 input[type=text] {
   right: 35%;
-  -webkit-box-sizing: border-box;
+  /* -webkit-box-sizing: border-box; */
   border: 2px solid #fff;
   border-radius: 4px;
   font-size: 30px;
   padding: 8px 20px 8px 40px;
-  width: 100%;
+  width: 90%;
   text-align: center;
   color: #af4340;
   letter-spacing: 2px;

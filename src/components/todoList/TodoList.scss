@@ -71,27 +71,51 @@ body .btn-warning:hover {
         display: none !important; } 
 
         .save-btn {
-          background: #e74c3c;
-          width: 200px;
-          height: 65px;
+          left: 5%;
+          width: 90%;
+          background-color: #af4340;
           color: white;
-          font-size: x-large;
-          display: block;
-          margin: auto;
-          margin-top: 75px;
-          border-radius: 15px;
-          margin-bottom: 75px; }
+          padding: 14px 20px;
+          margin: 35px 0 31px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
 
-          .wrapper-details {
-            width: 50%;
-            position: absolute;
-            top: 7%;
-            left: 25%;
-            z-index: 10;
-            background-color: white;
-            text-align: center;
-            border: 3px solid #b9242e;
-            border-radius: 15px; }
+        .btn-check{
+          height: 15px;
+        }
+        .checked-input{
+          height: 18px;
+          width: 18px;
+        }
+        .wrapper-details {
+          width: 50%;
+          position: absolute;
+          top: 7%;
+          left: 25%;
+          z-index: 10;
+          background-color: white;
+          text-align: center;
+          border: 3px solid #b9242e;
+          border-radius: 15px; }
 
-            .details-to-fill {
-              z-index: 10; }
+          .details-to-fill {
+            z-index: 10; }
+
+          .cancel-btn{
+            width: 90%;
+            background-color: #af4340;
+            color: white;
+            padding: 14px 20px;
+            margin: 0px 0 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          .remark:focus{
+            outline: none !important;
+            -webkit-box-shadow: 0 0 10px #2b2a2a;
+            box-shadow: 0 0 10px #2b2a2a;
+          }
+        

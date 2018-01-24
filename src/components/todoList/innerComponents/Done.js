@@ -30,7 +30,7 @@ export class Done extends React.Component {
         return (
             <div className="done-item row">
                   <span className="col col-md-3"> {this.props.name}</span>
-                  <span className="col col-md-1"> <input type="checkbox" onChange={() => this.click(this.props.id)} checked/> </span>
+                  <span className="col col-md-1"> <input className="checked-input" type="checkbox" onChange={() => this.click(this.props.id)} checked/> </span>
                   <span className="col col-md-2"> {this.props.startDate}</span>
                   <span className="col col-md-2"> {this.props.endDate}</span>
                   <span className="col col-md-2"> {this.props.Remark}</span>
