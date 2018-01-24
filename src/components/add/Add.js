@@ -3,7 +3,7 @@ import axios from "axios";
 import { BrowserRouter, Link } from 'react-router-dom';
 import { Route, browserHistory, Redirect } from 'react-router';
 import { setTimeout } from 'timers';
-
+import ReactTimeout from 'react-timeout';
 export class Add extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +20,6 @@ export class Add extends React.Component {
             currentTodo: null ,
             validationError:false                   
         }
-
         if (this.props.match.params.id != "null") {
             debugger;
             this.state.currentTodo = this.props.data.filter(ct => ct.id == this.props.match.params.id);
@@ -31,8 +30,8 @@ export class Add extends React.Component {
             this.state.todo.endDate = this.state.currentTodo[0].endDate;
             this.state.todo.Remark = this.state.currentTodo[0].Remark;        
         }
-
         this.onInputChange = this.onInputChange.bind(this);
+        this.onSave = this.onSave.bind(this);
     };
 
     onInputChange = (event) => {
@@ -45,8 +44,8 @@ export class Add extends React.Component {
         e.preventDefault();
         this.setState({ redirect: true });
     }
+
     onSave = (event) => {
-        debugger;
         if(this.state.todo.name){
             if (this.state.currentTodo == null) {
                 this.props.onAdd(this.state.todo);
@@ -57,14 +56,21 @@ export class Add extends React.Component {
             this.returnToList(event);
         }
         else{
-            this.setState({ validationError: true });
-            this.returnToList(event);
+         this.setState({validationError:true}
+             , () => {
+            setTimeout(()=> {
+              this.setState(()=> ({validationError:false}));
+            }, 2000);
         }
-    }
+    );   
+    event.preventDefault();    
+    } 
+} 
     onCancel = (event) => {
         this.returnToList(event);
     }
-    render() {       
+    render() { 
+        debugger;      
         if (this.state.redirect) return <Redirect to="/TodosList" />
         return (
             <div>
@@ -78,8 +84,8 @@ export class Add extends React.Component {
                         className="ss"/>
                     <br /> 
                     {(this.state.validationError === true) ? (<p className="error-message">You Must Add A Todo's Name !!!</p>) : (<p></p>)}
-                    <button class="panel-footer" className="cancel" onClick={this.onCancel} >Cancel</button>
-                    <button class="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
+                    <button className="panel-footer" className="cancel" onClick={this.onCancel} >Cancel</button>
+                    <button className="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
                 </form>
             </div>
         );
