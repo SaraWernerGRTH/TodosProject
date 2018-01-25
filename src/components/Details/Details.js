@@ -59,7 +59,7 @@ export class Details extends React.Component {
                 </div>
                 <div className="row">
                     <h2 className='col col-md-2'>name:</h2>
-                    <div className='col col-md-4' ><h2>{this.state.itemSelected.name}</h2></div>
+                    <div className='col col-md-6' ><h2>{this.state.itemSelected.name}</h2></div>
                 </div>
                 <div className="row">
                     <h2 className='col col-md-2'>IsDone:</h2>
