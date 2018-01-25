@@ -10,9 +10,9 @@ export const UPDATE_TODO = 'UPDATE_TODO';
 export const SEARCH_TODO = 'SEARCH_TODO';
 export const REFRESH_TODO = 'REFRESH_TODO';
 
-export function OnAddTodo(todo) {
-    return { type: ADD_TODO, payload: todo };
-}
+// export function OnAddTodo(todo) {
+//     return { type: ADD_TODO, payload: todo };
+// }
 
 export function deleteTodo(todoId) {
     return { type: DELETE_TODO, todoId };
@@ -31,11 +31,12 @@ export function OnRefreshTodo() {
 }
 export const onLoad = () => (
     dispatch => {
-        return axios.get('todos.json')
+        return axios.get('http://localhost:3000/data/')
             .then(res => {
+                console.log(res)
                 dispatch({
                     type: LOAD_TODO,
-                    data: res.data.data
+                    data: res.data
                 })
             })
             .catch(err => {
@@ -43,3 +44,42 @@ export const onLoad = () => (
             }
             )
     })
+    export const OnAddTodo = (todo) => (
+        dispatch => {
+            return axios.post('http://localhost:3000/data/',todo)
+                .then(res => {
+                    dispatch({ type: ADD_TODO, payload: todo })
+                })
+                .catch(err => {
+                    console.log("error");
+                }
+            )
+        }
+    )
+    // export function deleteTodo(todoId) {
+    //     dispatch => {
+    //         return axios.delete('http://localhost:3000/data/'+todoId)
+    //             .then(res => {
+    //                 console.log("res:   "+res);
+    //                 dispatch({ type: DELETE_TODO, todoId })
+    //             })
+    //             .catch(err => {
+    //                 console.log("error");
+    //             }
+    //         )
+    //     }
+    // }
+    // export function OnUpdateTodo(todo) {
+    //     dispatch => {
+    //         return axios.put('http://localhost:3000/data/'+todo.id,todo)
+    //             .then(res => {
+    //                 debugger;
+    //                 console.log("res:   "+res);                    
+    //                 dispatch({ type: UPDATE_TODO, payload: res })
+    //             })
+    //             .catch(err => {
+    //                 console.log("error");
+    //             }
+    //         )
+    //     }
+    // }

@@ -33,7 +33,7 @@ const reducer = (state = { data: [], FilterList: [] }, action) => {
             //var lower = action.payload.toLowerCase();
             //var uper = action.payload.toUpperCase();
             return { ...state, FilterList: state.FilterList.filter(c => c.name.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase())};
-            
+
         }
 
         case 'REFRESH_TODO': {

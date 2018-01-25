@@ -13,7 +13,6 @@ import { Details } from './components/Details/Details';
 
 class App extends Component {
     componentWillMount() {
-        debugger;
         this.props.onLoad();
     }
     render() {
