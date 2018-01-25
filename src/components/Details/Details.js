@@ -50,7 +50,10 @@ export class Details extends React.Component {
             <div className="container"> 
             <div className="pie-div">
             <h2 className="pie-header">Status of your tasks:</h2>
-            <Pie3D data={this.state.dataForGraph}/></div>            
+            <Pie3D data={this.state.dataForGraph}/></div> 
+            <div className='count-of-tasks'>Count of tasks:</div>
+            <br />
+            <div className='count-tasks' >{this.props.data.length}</div>           
             <div className="container details-container">
                 <div className="row details-header"><h1>Details Display Form</h1></div>
                 <div className="row">

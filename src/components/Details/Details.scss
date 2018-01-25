@@ -6,12 +6,13 @@ $padding: 10px;
 @import "../ctr.vars.scss";
 
 .details-container{
-    margin: -15% 0% 0% 35%;}
+    margin: -20% 0% 0% 35%;}
 .details-header{
     color:#f0ad4e;
 }
 .pie-div{
     margin-top: 9%;
+
     margin-left: -100%;
     text{
         fill: white;
@@ -24,4 +25,14 @@ $padding: 10px;
     color: #f0ad4e;
     margin-left: 40%;
     padding-bottom: 2%;
+}
+.count-of-tasks{
+    margin-left: -10%;
+    font-size: 3rem;
+    margin-top: 2%;
+    color: #f0ad4e;
+}
+.count-tasks{
+    font-size: 2rem;
+    margin-left: -2%;
 }
