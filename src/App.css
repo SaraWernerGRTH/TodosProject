@@ -292,10 +292,17 @@ form {
   background-image: -webkit-linear-gradient(top, #af4340 0, #af4340 100%); }
 
 .details-container {
-  margin: 10% 0% 0% 40%; }
+  margin: -5% 0% 0% 35%; }
 
 .details-header {
   color: #f0ad4e; }
+
+.pie-div {
+  margin-top: 9%;
+  margin-left: -100%; }
+  .pie-div text {
+    fill: white;
+    font-size: 2rem; }
 
 .App {
   text-align: center; }

@@ -83,7 +83,7 @@
     {
       "id": "11",
       "name": "update project plan",
-      "IsDone":"false",
+      "IsDone":false,
       "startDate":"",
       "endDate":"",
       "Remark":""
