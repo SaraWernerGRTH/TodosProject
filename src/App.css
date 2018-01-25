@@ -292,7 +292,7 @@ form {
   background-image: -webkit-linear-gradient(top, #af4340 0, #af4340 100%); }
 
 .details-container {
-  margin: -5% 0% 0% 35%; }
+  margin: -15% 0% 0% 35%; }
 
 .details-header {
   color: #f0ad4e; }
@@ -303,6 +303,13 @@ form {
   .pie-div text {
     fill: white;
     font-size: 2rem; }
+
+.pie-header {
+  position: relative;
+  font-size: 45px;
+  color: #f0ad4e;
+  margin-left: 40%;
+  padding-bottom: 2%; }
 
 .App {
   text-align: center; }

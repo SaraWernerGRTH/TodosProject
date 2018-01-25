@@ -6,7 +6,7 @@ $padding: 10px;
 @import "../ctr.vars.scss";
 
 .details-container{
-    margin: -5% 0% 0% 35%;}
+    margin: -15% 0% 0% 35%;}
 .details-header{
     color:#f0ad4e;
 }
@@ -17,4 +17,11 @@ $padding: 10px;
         fill: white;
         font-size: 2rem;
     }
+}
+.pie-header{
+    position: relative;
+    font-size: 45px;
+    color: #f0ad4e;
+    margin-left: 40%;
+    padding-bottom: 2%;
 }

@@ -4,7 +4,6 @@ import { BrowserRouter, Link } from 'react-router-dom';
 import { Route, browserHistory, Redirect } from 'react-router';
 import { Chart, Axis, Series, Tooltip, Cursor, Line } from 'react-charts';
 import Pie3D from 'react-pie3d';
-
 export class Details extends React.Component {
     constructor(props) {
         debugger
@@ -46,11 +45,12 @@ export class Details extends React.Component {
         e.preventDefault();
         this.setState({ redirect: true });
     }
-
     render() {       
         return ( 
             <div className="container"> 
-            <div className="pie-div"><Pie3D data={this.state.dataForGraph}/></div>            
+            <div className="pie-div">
+            <h2 className="pie-header">Status of your tasks:</h2>
+            <Pie3D data={this.state.dataForGraph}/></div>            
             <div className="container details-container">
                 <div className="row details-header"><h1>Details Display Form</h1></div>
                 <div className="row">
