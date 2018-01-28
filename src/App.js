@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { onLoad } from './actions/todoAction'
-import { OnAddTodo, OnUpdateTodo, deleteTodo, OnSearchTodo, OnRefreshTodo, changeTodo } from './actions/todoAction'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { onLoad } from './actions/todoAction';
+import { OnAddTodo, OnUpdateTodo, deleteTodo, OnSearchTodo, OnRefreshTodo, changeTodo } from './actions/todoAction';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Home } from './components/home/home';
 import { Add } from './components/add/Add';
 import { TodoList } from './components/todoList/TodoList';

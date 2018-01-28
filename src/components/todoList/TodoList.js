@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Link } from 'react-router-dom'
-import { Route } from 'react-router'
-import { Todo } from './innerComponents/Todo'
+import { BrowserRouter, Link } from 'react-router-dom';
+import { Route } from 'react-router';
+import { Todo } from './innerComponents/Todo';
 import { Done } from './innerComponents/Done';
 
 export class TodoList extends Component {
@@ -58,7 +58,7 @@ export class TodoList extends Component {
                                  <h3 className="col col-md-2">Delete</h3>
                                  <h3 className="col col-md-2">Details</h3>
                             </div>
-                            {this.props.FilterList.filter(item=>item.IsDone!=true&&item.IsDone!="true").map(todoItem => <Todo key={todoItem.id} onDelete={this.props.onDelete} updateToDone={this.updateToDone} {...todoItem} id={todoItem.id}></Todo>)}
+                            {this.props.FilterList.filter(item=>item.IsDone==false||item.IsDone=="false"||item.IsDone=="").map(todoItem => <Todo key={todoItem.id} onDelete={this.props.onDelete} updateToDone={this.updateToDone} {...todoItem} id={todoItem.id}></Todo>)}
                           </div>
                     </div>
                 </div>
