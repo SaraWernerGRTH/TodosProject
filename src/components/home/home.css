@@ -1,14 +1,7 @@
-.center-wrap {
-  position: absolute;
-  top: calc(50% - 100px);
-  left: calc(50% - 125px);
-  width: 250px;
-  height: 200px; }
-
 .home {
   font-family: David;
   margin-top: 10%;
-  margin-left: 23%; }
+  margin-left: 27%; }
 
 ._img {
   background-color: #2b2a2a;
@@ -18,17 +11,16 @@ body * {
   box-sizing: border-box; }
 
 .text {
-  margin: 0% 0% 0% 10%;
   color: #888990;
-  font-size: 8rem;
+  font-size: 9vmin;
   text-transform: uppercase;
   font-family: cursive; }
 
 .number {
   font-family: cursive;
-  font-size: 70px;
+  font-size: 6vmin;
   color: #f0ad4e;
-  margin: 5% 0% 0% 32%; }
+  margin: 5% 0% 0% 27%; }
 
 .checked-input {
   height: 18px;
@@ -46,38 +38,18 @@ body * {
   min-width: 10vw;
   cursor: pointer;
   width: 25vw;
-  margin: 100% 0% 0% -46%; }
-
-.button a {
-  color: #969696;
-  font-family: cursive;
-  text-decoration: none; }
-
-.button .shift {
-  -webkit-transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1); }
+  margin: 10% 0% 0% 13%; }
+  .button a {
+    color: #969696;
+    font-family: cursive;
+    text-decoration: none; }
 
 .button:hover {
   border-color: #af4340; }
-
-.button:hover a {
-  color: #af4340; }
-
-.button:hover .shift {
-  padding-left: 5px; }
-
-input[type=text] {
-  right: 35%;
-  /* -webkit-box-sizing: border-box; */
-  border: 2px solid #fff;
-  border-radius: 4px;
-  font-size: 30px;
-  padding: 8px 20px 8px 40px;
-  width: 90%;
-  text-align: center;
-  color: #af4340;
-  letter-spacing: 2px;
-  background-color: transparent; }
+  .button:hover a {
+    color: #af4340; }
+  .button:hover .shift {
+    padding-left: 5px; }
 
 a:hover {
   text-decoration: none; }

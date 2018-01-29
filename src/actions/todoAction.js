@@ -1,67 +1,3 @@
-// // export function OnAddTodo(todo) {
-// //     return { type: ADD_TODO, payload: todo };
-// // }
-// export function deleteTodo(todoId) {
-//     return { type: DELETE_TODO, todoId };
-// }
-// export function changeTodo(todoId,newStatus) {
-//     return { type: CHANGE_TODO, todoId,newStatus };
-// }
-// export function OnUpdateTodo(todo) {
-//     return { type: UPDATE_TODO, payload: todo };
-// }
-// export function OnSearchTodo(Value) {
-//     return { type: SEARCH_TODO, payload: Value };
-// }
-// export function OnRefreshTodo() {
-//     return { type: REFRESH_TODO };
-// }
-// export const onLoad = () => (
-//     dispatch => {
-//         return axios.get('todos.json')
-//             .then(res => {
-//                 dispatch({
-//                     type: LOAD_TODO,
-//                     data: res.data.data
-//                 })
-//             })
-//             .catch(err => {
-//                 console.log("error");
-//             }
-//             )
-//     })
-/////////////////////////////////API//////////////////////
-
-    // export function deleteTodo(todoId) {
-    //     dispatch => {
-    //         return axios.delete('http://localhost:3000/data/'+todoId)
-    //             .then(res => {
-    //                 console.log("res:   "+res);
-    //                 dispatch({ type: DELETE_TODO, todoId })
-    //             })
-    //             .catch(err => {
-    //                 console.log("error");
-    //             }
-    //         )
-    //     }
-    // }
-    // export function OnUpdateTodo(todo) {
-    //     dispatch => {
-    //         return axios.get('http://localhost:3000/data/')
-    //         // return axios.put('http://localhost:3000/data/'+todo.id,todo)
-    //             .then(res => {
-    //                 debugger;
-    //                 console.log("res:hi i came frm dispatch post    "+res);
-    //                 dispatch({ type: UPDATE_TODO, payload: res })
-    //             })
-    //             .catch(err => {
-    //                 console.log("error");
-    //             }
-    //         )
-    //     }
-    // }
-
-    /////////////////////////////////////////////////////////////////////    
 import fetch from 'isomorphic-fetch';
 import * as axios from 'axios';
 import { debug } from 'util';
@@ -80,12 +16,12 @@ export const REFRESH_TODO = 'REFRESH_TODO';
 // export function deleteTodo(todoId) {
 //     return { type: DELETE_TODO, todoId };
 // }
-export function changeTodo(todoId,newStatus) {
-    return { type: CHANGE_TODO, todoId,newStatus };
-}
 // export function OnUpdateTodo(todo) {
 //     return { type: UPDATE_TODO, payload: todo };
 // }
+export function changeTodo(todoId,newStatus) {
+    return { type: CHANGE_TODO, todoId,newStatus };
+}
 export function OnSearchTodo(Value) {
     return { type: SEARCH_TODO, payload: Value };
 }
@@ -125,11 +61,9 @@ export function OnRefreshTodo() {
                 return axios.delete('http://localhost:3000/data/'+todoId)
                     .then(res => {
                         console.log("res:   "+res)
-                        debugger
                         dispatch({ type: DELETE_TODO, todoId })
                     })
                     .catch(err => {
-                        debugger
                         console.log("error");
                     }
                 )
@@ -140,12 +74,10 @@ export function OnRefreshTodo() {
             debugger;
             return axios.put('http://localhost:3000/data/'+todo.id,todo)
                 .then(res => {
-                    debugger;
-                    console.log("res:hi i came frm dispatch post    "+res)
+                    console.log("res:  "+res)
                     dispatch({ type: UPDATE_TODO, payload: res })
                 })
                 .catch(err => {
-                    debugger;
                     console.log("error");
                 }
             )

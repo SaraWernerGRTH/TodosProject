@@ -16,13 +16,13 @@ export class Home extends Component {
     }
     render() {
         return (
-            <div  >
+            <div>
                 <div className='home' >
                     <div className='text'>Count of todos</div>
                     <br />
                     <div className='number' >{this.props.data.length}</div>
-                    <div className="center-wrap">
-                        <div className="button">                         
+                    <div className="center-wrap row">
+                        <div className="button col col-md-12">                         
                             <Link to="/TodoList">to the list <span className="shift"></span></Link>
                         </div>
                     </div>                 

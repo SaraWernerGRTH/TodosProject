@@ -4,3 +4,18 @@
 
 .navbar-inverse {
   background-image: -webkit-linear-gradient(top, #af4340 0, #af4340 100%); }
+
+.navbar-toggle {
+  margin-right: 49%; }
+
+input[type=text] {
+  right: 35%;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: 30px;
+  padding: 8px 20px 8px 40px;
+  width: 90%;
+  text-align: center;
+  color: #af4340;
+  letter-spacing: 2px;
+  background-color: transparent; }
