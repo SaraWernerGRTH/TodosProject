@@ -19,7 +19,7 @@ export class TodoList extends Component {
     }
     onInputChange = (event) => {
         const value = event.target.value;
-        this.setState({ValueSearch:value});
+        this.state.ValueSearch = value;
         this.props.OnRefresh();
         this.props.onSearch(this.state.ValueSearch);
     }
