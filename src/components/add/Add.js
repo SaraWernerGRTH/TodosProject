@@ -22,21 +22,27 @@ export class Add extends React.Component {
         }
         if (this.props.match.params.id !== "null") {
             this.state.currentTodo = this.props.data.filter(ct => ct.id == this.props.match.params.id);
-            this.state.todo.id = this.state.currentTodo[0].id;
-            this.state.todo.name = this.state.currentTodo[0].name;
-            this.state.todo.IsDone = this.state.currentTodo[0].IsDone;
-            this.state.todo.startDate = this.state.currentTodo[0].startDate;
-            this.state.todo.endDate = this.state.currentTodo[0].endDate;
-            this.state.todo.Remark = this.state.currentTodo[0].Remark;        
+            if(this.state.currentTodo.length>0){   
+                this.state.todo.id = this.state.currentTodo[0].id;
+                this.state.todo.name = this.state.currentTodo[0].name;
+                this.state.todo.IsDone = this.state.currentTodo[0].IsDone;
+                this.state.todo.startDate = this.state.currentTodo[0].startDate;
+                this.state.todo.endDate = this.state.currentTodo[0].endDate;
+                this.state.todo.Remark = this.state.currentTodo[0].Remark;       
+    
+            }
         }
         this.onInputChange = this.onInputChange.bind(this);
         this.onSave = this.onSave.bind(this);
     };
-
+    //  componentWillMount(){
+    //     if(this.props.data.length==0){
+    //         this.setState({ redirect: true });            }
+    //  }
     onInputChange = (event) => {
-        const todoo = this.state.todo;
-        todoo[event.target.id] = event.target.value;
-        this.setState({ todo: todoo })
+        const todo = this.state.todo;
+        todo[event.target.id] = event.target.value;
+        this.setState({ todo })
     }
 
     returnToList = (e) => {
@@ -50,8 +56,10 @@ export class Add extends React.Component {
                 this.state.todo.id =Math.max.apply(Math,this.props.data.map(function(o){return o.id}))+1;                
                 this.props.onAdd(this.state.todo);
             }
-            else
+            else {
+                debugger
                 this.props.onUpdate(this.state.todo);
+            }
             this.returnToList(event);
         }
         else{
@@ -83,8 +91,8 @@ export class Add extends React.Component {
                         className="ss"/>
                     <br /> 
                     {(this.state.validationError === true) ? (<p className="error-message">You Must Add A Todo's Name !!!</p>) : (<p></p>)}
-                    <button className="panel-footer" className="cancel" onClick={this.onCancel} >Cancel</button>
-                    <button className="panel-footer" type="submit" className="sumbit" onClick={this.onSave} >Save</button>
+                    <button className="panel-footer cancel" onClick={this.onCancel} >Cancel</button>
+                    <button className="panel-footer sumbit" type="submit" onClick={this.onSave} >Save</button>
                 </form>
             </div>
         );

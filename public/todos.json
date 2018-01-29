@@ -22,7 +22,7 @@
       "IsDone": false,
       "startDate": "",
       "endDate": "",
-      "Remark": ""
+      "Remark": "30 minutes minimum"
     },
     {
       "id": "4",
@@ -138,22 +138,6 @@
     },
     {
       "id": 18,
-      "name": "zzzzzzzzzzzzzzzzzzzzzzzzzzzz",
-      "IsDone": "",
-      "startDate": "",
-      "endDate": "",
-      "Remark": ""
-    },
-    {
-      "id": 19,
-      "name": "re",
-      "IsDone": "",
-      "startDate": "",
-      "endDate": "",
-      "Remark": ""
-    },
-    {
-      "id": 20,
       "name": "sushi",
       "IsDone": "",
       "startDate": "",
@@ -161,12 +145,12 @@
       "Remark": ""
     },
     {
-      "id": 21,
+      "id": 19,
       "name": "moca",
-      "IsDone": "",
-      "startDate": "",
-      "endDate": "",
-      "Remark": ""
+      "IsDone": false,
+      "startDate": "Jan 16 2018",
+      "endDate": "Jan 17 2018",
+      "Remark": "z"
     }
   ]
 }
