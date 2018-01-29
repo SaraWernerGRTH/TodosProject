@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { BrowserRouter, Link } from 'react-router-dom';
-import { Route } from 'react-router';
+// import { connect } from 'react-redux';
+// import { BrowserRouter, Link } from 'react-router-dom';
+// import { Route } from 'react-router';
 import { Todo } from './innerComponents/Todo';
 import { Done } from './innerComponents/Done';
 
@@ -19,7 +19,7 @@ export class TodoList extends Component {
     }
     onInputChange = (event) => {
         const value = event.target.value;
-        this.state.ValueSearch = value;
+        this.setState({ValueSearch:value});
         this.props.OnRefresh();
         this.props.onSearch(this.state.ValueSearch);
     }
@@ -34,7 +34,7 @@ export class TodoList extends Component {
     }  
     updateToTodo(todoDetails){
         debugger;
-        var todo=this.props.FilterList.filter(obj=>obj.id==todoDetails.id)[0];
+        var todo=this.props.FilterList.filter(obj=>obj.id===todoDetails.id)[0];
         todo.IsDone=false;        
         this.props.onUpdate(todo);
     }   
@@ -58,7 +58,7 @@ export class TodoList extends Component {
                                  <h3 className="col col-md-2">Delete</h3>
                                  <h3 className="col col-md-2">Details</h3>
                             </div>
-                            {this.props.FilterList.filter(item=>item.IsDone==false||item.IsDone=="false"||item.IsDone=="").map(todoItem => <Todo key={todoItem.id} onDelete={this.props.onDelete} updateToDone={this.updateToDone} {...todoItem} id={todoItem.id}></Todo>)}
+                            {this.props.FilterList.filter(item=>item.IsDone===false||item.IsDone==="false"||item.IsDone==="").map(todoItem => <Todo key={todoItem.id} onDelete={this.props.onDelete} updateToDone={this.updateToDone} {...todoItem} id={todoItem.id}></Todo>)}
                           </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ export class TodoList extends Component {
                                  <h3 className="col col-md-1">Delete</h3>
                                  <h3 className="btn-details-done">Details</h3>
                             </div>
-                            {this.props.FilterList.filter(item=>item.IsDone==true||item.IsDone=="true").map(doneItem => <Done key={doneItem.id} onDelete={this.props.onDelete} updateToTodo={this.updateToTodo} {...doneItem} id={doneItem.id}></Done>)}
+                            {this.props.FilterList.filter(item=>item.IsDone===true||item.IsDone==="true").map(doneItem => <Done key={doneItem.id} onDelete={this.props.onDelete} updateToTodo={this.updateToTodo} {...doneItem} id={doneItem.id}></Done>)}
                         </div>  
                      </div>
                 </div>

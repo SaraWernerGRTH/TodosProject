@@ -1,8 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import { connect } from 'react-redux';
-import { deleteTodo } from '../../../actions/todoAction';
-import { changeTodo } from '../../../actions/todoAction';
+import React from 'react';
+import { Link } from 'react-router-dom'
 import style from '../TodoList.scss';
 export class Done extends React.Component {
     constructor(props) {

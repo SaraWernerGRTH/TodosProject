@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import { BrowserRouter, Link } from 'react-router-dom';
-import { Route, browserHistory, Redirect } from 'react-router';
-import { Chart, Axis, Series, Tooltip, Cursor, Line } from 'react-charts';
+// import axios from "axios";
+// import { BrowserRouter, Link } from 'react-router-dom';
+// import { Route, browserHistory, Redirect } from 'react-router';
+// import { Chart, Axis, Series, Tooltip, Cursor, Line } from 'react-charts';
 import Pie3D from 'react-pie3d';
 export class Details extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ export class Details extends React.Component {
         this.componentWillMount=this.componentWillMount.bind(this);
     };
     componentWillMount = () =>{
-        var donesCount=this.props.data.filter(obj=>obj.IsDone==true).length;
+        var donesCount=this.props.data.filter(obj=>obj.IsDone===true).length;
         var TodosCount=this.props.data.length-donesCount;
         debugger
         var data = [
@@ -32,12 +32,15 @@ export class Details extends React.Component {
           ];
         var s=this.props.match.params.id;    
         var found = this.props.data.find(function(element) {
-            return element.id ==s;
+            return element.id ===s||String(element.id)==s;
           });
+          if(found.IsDone===""){
+            found.IsDone=false;
+          }
           found.IsDone=String(found.IsDone);
-          found.Remark=found.Remark==""?"There Is No Remark To Display.":found.Remark;
-          found.startDate=found.startDate==""?"There Is No startDate To Display.":found.startDate;
-          found.endDate=found.endDate==""?"There Is No endDate To Display.":found.endDate;          
+          found.Remark=found.Remark===""?"There Is No Remark To Display.":found.Remark;
+          found.startDate=found.startDate===""?"There Is No startDate To Display.":found.startDate;
+          found.endDate=found.endDate===""?"There Is No endDate To Display.":found.endDate;          
         this.setState({itemSelected:found});
         this.setState({dataForGraph:data});
     }
