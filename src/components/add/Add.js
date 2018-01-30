@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import { BrowserRouter, Link } from 'react-router-dom';
-import { Route, browserHistory, Redirect } from 'react-router';
+import { Redirect } from 'react-router';
 import { setTimeout } from 'timers';
-import ReactTimeout from 'react-timeout';
-export class Add extends React.Component {
+export class Add extends Component {
     constructor(props) {
         super(props);
         this.state = {         
@@ -13,8 +10,8 @@ export class Add extends React.Component {
             currentTodo: null ,
             validationError:false                   
         }
-        if (this.props.match.params.id !== "null") {
-            this.state.currentTodo = this.props.data.filter(ct => ct.id === this.props.match.params.id);
+        if (this.props.match.params.id !== "null") {// update : fill old data.
+            this.state.currentTodo = this.props.data.filter(ct => String(ct.id) === this.props.match.params.id);
             if(this.state.currentTodo.length>0){  
                 this.state.todo={...this.state.currentTodo[0]};    
             }
@@ -36,16 +33,17 @@ export class Add extends React.Component {
 
     onSave = (event) => {
         if(this.state.todo.name){
-            if (this.state.currentTodo == null) {
-                this.state.todo.id =Math.max.apply(Math,this.props.data.map(function(o){return o.id}))+1;                
-                this.props.onAdd(this.state.todo);
+            if (this.state.currentTodo === null) {
+                const id = Math.max.apply(Math,this.props.data.map(function(o){return o.id}))+1;  
+                const todo=this.state.todo;
+                todo.id =id;   
+                this.setState({todo},() => this.props.onAdd(this.state.todo));           
             } else {
                 this.props.onUpdate(this.state.todo);
             }
             this.returnToList(event);
         } else{
-                this.setState({validationError:true}
-                    , () => {
+                this.setState({validationError:true}, () => {
                     setTimeout(()=> {
                     this.setState(()=> ({validationError:false}));
                     }, 2000);
@@ -54,9 +52,11 @@ export class Add extends React.Component {
             event.preventDefault();    
         } 
     } 
+    
     onCancel = (event) => {
         this.returnToList(event);
     }
+
     render() { 
         if (this.state.redirect) return <Redirect to="/TodosList" />
         return (

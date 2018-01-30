@@ -1,11 +1,7 @@
 import React,{ Component } from 'react';
 import { Calendar } from 'react-date-range';
  
-export class DatePop extends Component {
-    // handleSelect(date){
-    //     alert(date); // Momentjs object 
-    // }
-
+export class DatePop extends Component { 
     render(){
         return (
             <div>

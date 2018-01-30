@@ -1,26 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import style from '../TodoList.scss';
 export class Done extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            todo: {
-                "id": "",
-                "name": "",
-                "IsDone":"",
-                "startDate":"",
-                "endDate":"",
-                "Remark":""
-            },
+            todo: { "id": "", "name": "", "IsDone":"", "startDate":"", "endDate":"", "Remark":"" },
         }
         this.click = this.click.bind(this);           
     }
     click(id){ 
-        var todo={
-            "id": id,
-            "IsDone":false
-        }; 
+        var todo={ "id": id, "IsDone":false }; 
         this.props.updateToTodo(todo);
     }
     render() {

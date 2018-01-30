@@ -9,21 +9,18 @@ export class Layout extends React.Component {
             today: new Date()
         };
     }
+
     toggleCollapse = () => {
         const collapsed = !this.state.collapsed;
         this.setState({ collapsed });
     }
-    button = {
-        mayrgin: '0.5%',
-        float: 'right'
-    };
 
+    button = { mayrgin: '0.5%', float: 'right' };
     render() {
-        const { location } = this.props;
         const { collapsed } = this.state;
         const navClass = collapsed ? "collapse" : "";
         return (
-            <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+            <nav className="navbar navbar-inverse navbar-fixed-top">
                 <div className="container">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle" onClick={this.toggleCollapse} >
@@ -35,15 +32,9 @@ export class Layout extends React.Component {
                     </div>
                     <div className={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li>
-                                <Link to="/" onClick={this.toggleCollapse} className="navigation-link">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/TodoList" onClick={this.toggleCollapse} className="navigation-link">TodoList</Link>
-                            </li>
-                            <li>
-                                <Link to={`/Add/${null}`} onClick={this.toggleCollapse} className="navigation-link">Add</Link>
-                            </li>
+                            <li><Link to="/" onClick={this.toggleCollapse} className="navigation-link">Home</Link></li>
+                            <li><Link to="/TodoList" onClick={this.toggleCollapse} className="navigation-link">TodoList</Link></li>
+                            <li><Link to={`/Add/${null}`} onClick={this.toggleCollapse} className="navigation-link">Add</Link></li>
                         </ul>
                     </div>
                 </div>

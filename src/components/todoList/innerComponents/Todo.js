@@ -1,12 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import { deleteTodo } from '../../../actions/todoAction';
-// import { changeTodo } from '../../../actions/todoAction';
-// import { Calendar } from 'react-date-range';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { DatePop } from './datePop';
 
-export class Todo extends React.Component {
+export class Todo extends Component {
     showDetails="1";
     constructor(props) {
         super(props);
@@ -22,12 +18,12 @@ export class Todo extends React.Component {
     }
     update(id){
         this.setState({showDetails:true});   
-        return false;        
     }
     save(id){
         this.setState({showDetails:false});
         var todo={
             "id": id,
+            "name": "",
             "IsDone":true,
             "startDate":this.state.startDate,
             "endDate":this.state.endDate,
@@ -39,7 +35,6 @@ export class Todo extends React.Component {
     cancel(){
         this.setState({showDetails:false});
         this.currentRemark=""; 
-        return false;
     }
     setRemark(event){
         this.setState({currentRemark: event.target.value});

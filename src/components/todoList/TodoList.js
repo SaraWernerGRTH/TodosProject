@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { BrowserRouter, Link } from 'react-router-dom';
-// import { Route } from 'react-router';
 import { Todo } from './innerComponents/Todo';
 import { Done } from './innerComponents/Done';
 
@@ -13,24 +10,24 @@ export class TodoList extends Component {
         }
         this.updateToDone = this.updateToDone.bind(this);    
         this.updateToTodo = this.updateToTodo.bind(this);    
+        this.search = this.search.bind(this);    
+        
         this.props.OnRefresh();
-        console.log(this.props);        
     }
     onInputChange = (event) => {
         const value = event.target.value;
-        this.state.ValueSearch = value;
+        this.setState({ValueSearch:value},() => this.search());      
+    }
+    search = () => {
         this.props.OnRefresh();
         this.props.onSearch(this.state.ValueSearch);
     }
-    updateToDone(doneDetails){
-        var done=this.props.FilterList.filter(obj=>obj.id==doneDetails.id)[0];
-        done.IsDone=true;
-        done.startDate=doneDetails.startDate;
-        done.endDate=doneDetails.endDate;
-        done.Remark=doneDetails.Remark;
-        this.props.onUpdate(done);
+    updateToDone = (doneDetails) => {
+        var done=this.props.FilterList.filter(obj=>obj.id===doneDetails.id)[0];
+        doneDetails.name=done.name;
+        this.props.onUpdate(doneDetails);
     }  
-    updateToTodo(todoDetails){
+    updateToTodo = (todoDetails) => {
         var todo=this.props.FilterList.filter(obj=>obj.id===todoDetails.id)[0];
         todo.IsDone=false;        
         this.props.onUpdate(todo);

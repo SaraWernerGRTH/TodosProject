@@ -1,6 +1,4 @@
-import fetch from 'isomorphic-fetch';
 import * as axios from 'axios';
-import { debug } from 'util';
 
 export const LOAD_TODO = 'LOAD_TODO';
 export const CHANGE_TODO = 'CHANGE_TODO';

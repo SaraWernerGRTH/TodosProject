@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Pie3D from 'react-pie3d';
-export class Details extends React.Component {
+export class Details extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +17,7 @@ export class Details extends React.Component {
         ];
         var itemToShowId=this.props.match.params.id;    
         var itemToShow = this.props.data.find(function(element) {
-            return element.id ===itemToShowId||String(element.id)==itemToShowId;
+            return element.id ===itemToShowId||String(element.id)===itemToShowId;
           });
           if(itemToShow.IsDone===""){
             itemToShow.IsDone=false;
