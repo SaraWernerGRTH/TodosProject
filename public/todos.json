@@ -1,12 +1,12 @@
- {
+{
   "data": [
     {
       "id": "1",
       "name": "Clean Home",
       "IsDone": true,
-      "startDate": "Jan 01 2018",
-      "endDate": "Jan 20 2018",
-      "Remark": "living-room"
+      "startDate": "Jan 02 2018",
+      "endDate": "Jan 30 2018",
+      "Remark": "perfect!!"
     },
     {
       "id": "2",
@@ -67,18 +67,18 @@
     {
       "id": "9",
       "name": "walking",
-      "IsDone": false,
-      "startDate": "",
-      "endDate": "",
-      "Remark": "30 minutes minimum"
+      "IsDone": true,
+      "startDate": "Jan 30 2018",
+      "endDate": "Jan 30 2018",
+      "Remark": "very good!"
     },
     {
       "id": "10",
       "name": "project book",
-      "IsDone": false,
-      "startDate": "",
-      "endDate": "",
-      "Remark": "tables code"
+      "IsDone": true,
+      "startDate": "Dec 04 2017",
+      "endDate": "Jan 30 2018",
+      "Remark": "Yes!!! :)"
     },
     {
       "id": "11",
@@ -115,7 +115,7 @@
     {
       "id": "15",
       "name": "travel to Jerusalem",
-      "IsDone": true,
+      "IsDone": false,
       "startDate": "Sep 15 2017",
       "endDate": "Dec 15 2017",
       "Remark": "visit grandpa"
@@ -137,24 +137,16 @@
       "Remark": ""
     },
     {
-      "id": 18,
-      "name": "sushi",
-      "IsDone": "",
-      "startDate": "",
-      "endDate": "",
-      "Remark": ""
-    },
-    {
       "id": 19,
       "name": "newTodo",
       "IsDone": false,
-      "startDate": "Jan 16 2018",
-      "endDate": "Jan 17 2018",
-      "Remark": "z"
+      "startDate": "Jan 29 2018",
+      "endDate": "Jan 29 2018",
+      "Remark": ""
     },
     {
       "id": 20,
-      "name": "take photos",
+      "name": "take photos;)",
       "IsDone": "",
       "startDate": "",
       "endDate": "",
