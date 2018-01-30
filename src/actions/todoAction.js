@@ -9,16 +9,6 @@ export const ADD_TODO = 'ADD_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
 export const SEARCH_TODO = 'SEARCH_TODO';
 export const REFRESH_TODO = 'REFRESH_TODO';
-
-// export function OnAddTodo(todo) {
-//     return { type: ADD_TODO, payload: todo };
-// }
-// export function deleteTodo(todoId) {
-//     return { type: DELETE_TODO, todoId };
-// }
-// export function OnUpdateTodo(todo) {
-//     return { type: UPDATE_TODO, payload: todo };
-// }
 export function changeTodo(todoId,newStatus) {
     return { type: CHANGE_TODO, todoId,newStatus };
 }
@@ -57,7 +47,6 @@ export function OnRefreshTodo() {
         )
         export const deleteTodo=(todoId) => (
             dispatch => {
-                debugger
                 return axios.delete('http://localhost:3000/data/'+todoId)
                     .then(res => {
                         console.log("res:   "+res)
@@ -71,7 +60,6 @@ export function OnRefreshTodo() {
         )
     export const OnUpdateTodo=(todo) => (
         dispatch => {
-            debugger;
             return axios.put('http://localhost:3000/data/'+todo.id,todo)
                 .then(res => {
                     console.log("res:  "+res)

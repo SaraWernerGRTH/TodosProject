@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-// import axios from "axios";
-// import { BrowserRouter, Link } from 'react-router-dom';
-// import { Route, browserHistory, Redirect } from 'react-router';
-// import { Chart, Axis, Series, Tooltip, Cursor, Line } from 'react-charts';
 import Pie3D from 'react-pie3d';
 export class Details extends React.Component {
     constructor(props) {
-        debugger
         super(props);
         this.state = {
             itemSelected:{},
@@ -17,31 +12,21 @@ export class Details extends React.Component {
     componentWillMount = () =>{
         var donesCount=this.props.data.filter(obj=>obj.IsDone===true).length;
         var TodosCount=this.props.data.length-donesCount;
-        debugger
-        var data = [
-            {
-              value: donesCount,
-              color: '#f0ad4e',
-              label: 'Done'
-            },
-            {
-              value: TodosCount,
-              color: '#af4340',
-              label: 'Todo'
-            }
-          ];
-        var s=this.props.match.params.id;    
-        var found = this.props.data.find(function(element) {
-            return element.id ===s||String(element.id)==s;
+        var data = [{ value: donesCount, color: '#f0ad4e', label: 'Done' },
+            { value: TodosCount,color: '#af4340',label: 'Todo' }
+        ];
+        var itemToShowId=this.props.match.params.id;    
+        var itemToShow = this.props.data.find(function(element) {
+            return element.id ===itemToShowId||String(element.id)==itemToShowId;
           });
-          if(found.IsDone===""){
-            found.IsDone=false;
+          if(itemToShow.IsDone===""){
+            itemToShow.IsDone=false;
           }
-          found.IsDone=String(found.IsDone);
-          found.Remark=found.Remark===""?"There Is No Remark To Display.":found.Remark;
-          found.startDate=found.startDate===""?"There Is No startDate To Display.":found.startDate;
-          found.endDate=found.endDate===""?"There Is No endDate To Display.":found.endDate;          
-        this.setState({itemSelected:found});
+          itemToShow.IsDone=String(itemToShow.IsDone);
+          itemToShow.Remark=itemToShow.Remark===""?"There Is No Remark To Display.":itemToShow.Remark;
+          itemToShow.startDate=itemToShow.startDate===""?"There Is No startDate To Display.":itemToShow.startDate;
+          itemToShow.endDate=itemToShow.endDate===""?"There Is No endDate To Display.":itemToShow.endDate;          
+        this.setState({itemSelected:itemToShow});
         this.setState({dataForGraph:data});
     }
     returnToList = (e) => {

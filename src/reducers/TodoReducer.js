@@ -1,5 +1,4 @@
 function update(state, payload) {
-    debugger;
     console.log(state, payload)
     return state.id !== payload.id ? state : payload;
 }
@@ -30,9 +29,7 @@ const reducer = (state = { data: [], FilterList: [] }, action) => {
         }
 
         case 'SEARCH_TODO': {
-            debugger
             return { ...state, FilterList: state.FilterList.filter(c => c.name.toLowerCase().substr(0, action.payload.length) == action.payload.toLowerCase())};
-            
         }
 
         case 'REFRESH_TODO': {

@@ -7,7 +7,6 @@ import { Done } from './innerComponents/Done';
 
 export class TodoList extends Component {
     constructor(props) {
-        debugger;
         super(props);
         this.state = {
             ValueSearch: "",
@@ -24,7 +23,6 @@ export class TodoList extends Component {
         this.props.onSearch(this.state.ValueSearch);
     }
     updateToDone(doneDetails){
-        debugger;
         var done=this.props.FilterList.filter(obj=>obj.id==doneDetails.id)[0];
         done.IsDone=true;
         done.startDate=doneDetails.startDate;
@@ -33,7 +31,6 @@ export class TodoList extends Component {
         this.props.onUpdate(done);
     }  
     updateToTodo(todoDetails){
-        debugger;
         var todo=this.props.FilterList.filter(obj=>obj.id===todoDetails.id)[0];
         todo.IsDone=false;        
         this.props.onUpdate(todo);

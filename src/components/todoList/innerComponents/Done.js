@@ -17,7 +17,6 @@ export class Done extends React.Component {
         this.click = this.click.bind(this);           
     }
     click(id){ 
-        debugger
         var todo={
             "id": id,
             "IsDone":false

@@ -12,8 +12,6 @@ export class Home extends Component {
             today: new Date()
         };
     }
-    onInputChange = (event) => {
-    }
     render() {
         return (
             <div>

@@ -61,7 +61,7 @@ body .btn-warning a:hover {
   margin: 35px 0px 10px;
   border-radius: 4px;
   cursor: pointer;
-  border: 3px solid #232120; }
+  border: none; }
 
 .btn-check {
   height: 15px; }
@@ -92,7 +92,7 @@ body .btn-warning a:hover {
   margin: 0px 0 30px;
   border-radius: 4px;
   cursor: pointer;
-  border: 3px solid #232120; }
+  border: none; }
 
 .remark:focus {
   outline: none !important;
